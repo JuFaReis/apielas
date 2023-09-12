@@ -32,7 +32,7 @@ findAllUser (): Promise <User[]> {
   return this.userRepository.find ();
 
 }
-viewUser (id: number): Promise <User>{
+viewUser (id: number): Promise <User> {
   return this.userRepository.findOneBy ({id});
 
 }
@@ -48,6 +48,8 @@ updateUser(id: number, updateUserDto: UpdateUserDto): Promise <User>
   user.gender = updateUserDto.gender;
  return this.userRepository.save (user);
 }
-removeUser(id: number): Promise <{ affected?:number }> {
+removeUser(id: number): Promise <{ affected?:number }> 
+{
   return this.userRepository.delete(id);
+}
 }

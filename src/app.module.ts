@@ -19,7 +19,14 @@ import { User } from './user/entities/user.entity';
       database: 'myapp_aocrhNest', 
       synchronize: true,
       logging: true,
-    }),
+      ssl:true,
+      extra:{
+        ssl:{
+          rejectUnauthorized: false,
+    
+        },
+      },
+     }),
     UserModule,
 
   ],
